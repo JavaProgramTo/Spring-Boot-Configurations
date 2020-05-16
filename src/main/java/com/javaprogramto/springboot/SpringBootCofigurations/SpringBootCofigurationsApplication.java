@@ -18,27 +18,20 @@ public class SpringBootCofigurationsApplication {
 
     public static void main(String[] args) {
 
-
-
-
         SpringApplication app = new SpringApplication(SpringBootCofigurationsApplication.class);
 
         Map<String, Object> customConfig = new HashMap<>();
         customConfig.put("server.port", "9009");
 
-
-
-       // app.setDefaultProperties(customConfig);
-
-        ApplicationContext context =  app.run(args);
-        EmployeeOne e = (EmployeeOne)context.getBean("employeeOne");
-        System.out.println("EmployeeOne bean : "+e);
+        ApplicationContext context = app.run(args);
+        EmployeeOne e = (EmployeeOne) context.getBean("employeeOne");
+        System.out.println("EmployeeOne bean : " + e);
 
         EmployeeTwo e2 = (EmployeeTwo) context.getBean("employeeTwo");
-        System.out.println("EmployeeTwo bean : "+e2);
+        System.out.println("EmployeeTwo bean : " + e2);
 
         EmployeeThree e3 = (EmployeeThree) context.getBean("employeeThree");
-        System.out.println("EmployeeThree bean : "+e3);
+        System.out.println("EmployeeThree bean : " + e3);
 
     }
 
